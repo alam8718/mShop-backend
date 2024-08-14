@@ -799,19 +799,20 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     singularName: 'category';
     pluralName: 'categories';
     displayName: 'Category';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     name: Attribute.String;
-    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     color: Attribute.String;
     products: Attribute.Relation<
       'api::category.category',
       'manyToMany',
       'api::product.product'
     >;
+    icon: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -923,14 +924,15 @@ export interface ApiSliderSlider extends Schema.CollectionType {
     singularName: 'slider';
     pluralName: 'sliders';
     displayName: 'Slider';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     name: Attribute.String;
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     type: Attribute.Enumeration<['home', 'banner']>;
+    image: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
